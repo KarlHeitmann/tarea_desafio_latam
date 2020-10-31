@@ -1,5 +1,5 @@
 <h1>NasaPhotos#index</h1>
 <p>Find me in app/views/nasa_photos/index.html.erb</p>
 <p>
-  <%= build_web_page(@data["photos"]) %>
+  <%= build_web_page(@data["photos"]) unless @data.nil? %>
 </p>
