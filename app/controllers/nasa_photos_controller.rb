@@ -8,8 +8,9 @@ class NasaPhotosController < ApplicationController
     # puts resp
     puts @data
 =end
-    if (params.has_key?(:q))
-      url = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY'
+    if params.has_key?(:page)
+    # if (params.has_key?(:page) or params.has_key?(:))
+      url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&#{params.has_key?(:page) ? 'page=' + params[:page] + '&': ''}api_key=DEMO_KEY"
       uri = URI(url)
       resp = Net::HTTP.get(uri) # => String
       data = JSON.parse(resp)
