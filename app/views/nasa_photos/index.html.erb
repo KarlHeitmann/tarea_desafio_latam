@@ -2,8 +2,10 @@
 <p><span>Cantidad de fotos: </span><%= @photos.count %></p>
 <p>
   <%= form_tag("/nasa_photos/index", {:method => "get"}) do %>
-    <%= label_tag(:page, "Página:") %>
+    <%= label_tag(:page, "Página: ") %>
     <%= number_field_tag(:page, params[:page]) %>
+    <%= label_tag(:sol, "Sol: ") %>
+    <%= number_field_tag(:sol, params[:sol]) %>
     <%= submit_tag("Buscar") %>
   <% end %>
 </p>
